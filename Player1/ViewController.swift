@@ -29,6 +29,8 @@ class ViewController: UIViewController {
     
     
     private func playVideo() {
+        
+        // added the short clip video in the bundle directory
            guard let path = Bundle.main.path(forResource: "JL", ofType:"MOV") else {
                debugPrint("Justice league video not found")
                return
@@ -36,7 +38,9 @@ class ViewController: UIViewController {
            let player = AVPlayer(url: URL(fileURLWithPath: path))
            let playerController = AVPlayerViewController()
            playerController.player = player
-           present(playerController, animated: true) {
+        
+        // present the video
+        self.present(playerController, animated: true) {
                player.play()
            }
        }
